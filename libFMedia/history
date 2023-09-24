@@ -1,0 +1,69 @@
+libFMedia
+
+libFMedia-1.0d5 [Build 168]
+	virtual FMediaNode::Setup(), for adding In/Outputs, and Parameters on node registration.
+	FContainer stuff
+
+libFMedia-1.0d6 [Build 181]
+	FCopyFilter, various tidbits
+
+libFMedia-1.0d7 [Build 162]
+	Format Change Handling
+
+libFMedia-1.0d8 [Build 166]
+	more Format Change stuff
+
+libFMedia-1.0d9 [Build 167]
+	Parameters are now added/stored Input/Output-alike, kicked FParameterValue
+
+libFMedia-1.0d10 [Build 172]
+	going for bigger changes: HandleMessage
+
+libFMedia-1.0d11 [Build 174]
+	easier than i though... (HandleMessage issues resolved)
+
+libFMedia-1.0d12 [Build 203]
+	Inputs, Outputs, Parameters are now stored in simple Arrays. stability improved.
+
+libFMedia-1.0d13 [Build 305]
+	offline capability
+	FMediaFilter
+		RecycleBuffer() introduced.
+		SendOrRecycleBuffer() reordered buffer/output parameters, gets input parameter
+	FVideoProducer
+		MakeBuffer() gets skip_frames param.
+	FMediaInput/Output coupling for AdditionalBufferRequested, should support BufferGroup/Format changes later on.
+
+libFMedia-1.0d14 [Build 194]
+	stabilization
+
+libFMedia-1.0a15 [Build 191]
+	first release on cebit
+
+libFMedia-1.0a16 [Build 193]
+	FVideoProducer betterings/changes (for offline mode).
+	kinda backup. doing docs.
+
+libFMedia-1.0a17 [Build 265]
+	FFT/ControlData formats
+	FControlDataNode
+	FCopyFilter is now FConverter
+	tidbits
+
+libFMedia-1.0a18 [Build 265]
+	@nick
+
+	FJoint
+	Generic Filters now regard status code from your filter func.
+	FVideoProducer has controls for Width and Height,
+		Framerate changes properly via Format.
+		(Those controls not active when required format not wildcard for these).
+
+libFMedia-1.0a19 [Build 265]
+	zagreb 1
+
+libFMedia-1.0a20 [Build 184]
+	first public release
+
+libFMedia-1.0a20 [Build 184]
+	first public release

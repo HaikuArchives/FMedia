@@ -1,0 +1,36 @@
+
+FPresence-1.0d2 [Build 12]
+	Adopted for new FMediaNode input/output handling
+
+FPresence-1.0d3 [Build 16]
+	lib changes
+
+FPresence-1.0d4 [Build 12]
+	Factor, various
+
+FPresence-1.0a5 [Build 34]
+	first cebit release
+
+FPresence-1.0a6 [Build 13]
+	better :)
+
+FPresence-1.0a7 [Build 15]
+	works now :)
+
+FPresence-1.0a8 [Build 13]
+	works in color mode now: sets r=0, b=original, g=presence
+
+FPresence-1.0a9 [Build 12]
+	better Damp
+
+FPresence-1.0a10 [Build 12]
+	presence info stored in alpha
+
+FPresence-1.0a11 [Build 12]
+	really, now
+
+FDifference-1.0a0 [Build 10]
+	initial cebit release
+
+FDifference-1.0a1 [Build 5]
+	transmits overall difference in user_data

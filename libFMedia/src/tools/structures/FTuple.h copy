@@ -1,0 +1,101 @@
+#ifndef F_FTuple_H
+#define F_FTuple_H
+
+template <class T>
+class FTuple {
+	public:
+		FTuple( int _n = 2, T init = 0 ) {
+			n = _n;
+			value = new T[n];
+			for( int i=0; i<n; i++ ) value[i] = init;
+		}
+		
+		FTuple( const FTuple<T>& c ) {
+			n = c.n;
+			value = new T[n];
+			for( int i=0; i<n; i++ ) value[i] = c.value[i];
+		}
+		
+		~FTuple() {
+			if( value ) delete value;
+		}
+		
+		FTuple<T>& operator =( const FTuple<T>& c ) {
+			if( value ) delete value;
+			n = c.n;
+			value = new T[n];
+			for( int i=0; i<n; i++ ) value[i] = c.value[i];
+		}
+
+		FTuple<T>& operator =( const T c ) {
+			for( int i=0; i<n; i++ ) value[i] = c;
+		}
+
+		FTuple<T>& operator +=( const FTuple<T>& c ) {
+			for( int i=0; i<n && i<c.n; i++ ) value[i] += c.value[i];
+			return( *this );
+		}
+
+		FTuple<T>& operator -=( const FTuple<T>& c ) {
+			for( int i=0; i<n && i<c.n; i++ ) value[i] -= c.value[i];
+			return( *this );
+		}
+
+		FTuple<T>& operator *=( const FTuple<T>& c ) {
+			for( int i=0; i<n && i<c.n; i++ ) value[i] *= c.value[i];
+			return( *this );
+		}
+
+		FTuple<T>& operator *=( const float c ) {
+			for( int i=0; i<n; i++ ) value[i] *= c;
+			return( *this );
+		}
+
+		FTuple<T>& operator /=( const FTuple<T>& c ) {
+			for( int i=0; i<n && i<c.n; i++ ) value[i] /= c.value[i];
+			return( *this );
+		}
+		
+		friend FTuple<T>& operator +<T>( const FTuple<T>& a, const FTuple<T>& b );
+		friend FTuple<T>& operator -<T>( const FTuple<T>& a, const FTuple<T>& b );
+		friend FTuple<T>& operator *<T>( const FTuple<T>& a, const FTuple<T>& b );
+		friend FTuple<T>& operator /<T>( const FTuple<T>& a, const FTuple<T>& b );
+
+		void Set( int i, T v ) { value[i] = v; }
+		T& Get( int i ) { return( value[i] ); }
+		T* Pointer() { return( value ); }
+		
+	protected:
+		int n;
+		T *value;
+};
+
+template <class T>
+inline FTuple<T>& operator +( const FTuple<T>& a, const FTuple<T>& b ) {
+	FTuple<T> c( a );
+	c += b;
+	return( c );
+}
+
+template <class T>
+inline FTuple<T>& operator -( const FTuple<T>& a, const FTuple<T>& b ) {
+	FTuple<T> c( a );
+	c -= b;
+	return( c );
+}
+
+template <class T>
+inline FTuple<T>& operator *( const FTuple<T>& a, const FTuple<T>& b ) {
+	FTuple<T> c( a );
+	c *= b;
+	return( c );
+}
+
+template <class T>
+inline FTuple<T>& operator /( const FTuple<T>& a, const FTuple<T>& b ) {
+	FTuple<T> c( a );
+	c /= b;
+	return( c );
+}
+
+#endif
